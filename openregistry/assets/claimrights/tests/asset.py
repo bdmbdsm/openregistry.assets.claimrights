@@ -8,6 +8,9 @@ from openregistry.assets.core.tests.blanks.mixins import (
     snitch
 )
 
+from openregistry.assets.core.tests.blanks.asset import (
+    koatuu_additional_classification
+)
 from openregistry.assets.claimrights.models import Asset as AssetClaimRights
 from openregistry.assets.claimrights.tests.base import (
     test_asset_claimrights_data, BaseAssetWebTest
@@ -20,6 +23,7 @@ class AssetClaimRightsResourceTest(BaseAssetWebTest, ResourceTestMixin, AssetRes
     initial_status = 'pending'
 
     test_19_patch_decimal_witt_items = snitch(patch_decimal_item_quantity)
+    test_koatuu_additional_classification = snitch(koatuu_additional_classification)
 
 
 def suite():

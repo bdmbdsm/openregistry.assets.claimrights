@@ -4,7 +4,10 @@ from schematics.types.compound import ListType, ModelType
 from zope.interface import implementer
 
 from openregistry.assets.core.models import (
-    IAsset, Asset as BaseAsset, Item, Debt
+    AssetAdditionalClassification,
+    IAsset, Asset as BaseAsset,
+    Item,
+    Debt
 )
 
 
@@ -18,3 +21,4 @@ class Asset(BaseAsset):
     assetType = StringType(default="claimRights")
     items = ListType(ModelType(Item))
     debt = ModelType(Debt)
+    additionalClassifications = ListType(ModelType(AssetAdditionalClassification), default=list())
