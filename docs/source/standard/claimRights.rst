@@ -108,7 +108,7 @@ Schema
     This may also be used to present codes from an internal classification
     scheme.
 
-    One of the possible additional classifiers is CAVS.
+    The possible additional classifiers are CPVS and koatuu.
 
 :unit:
     :ref:`Unit`, required
