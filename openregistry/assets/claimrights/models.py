@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schematics.types import StringType, ValidationError
+from schematics.types import StringType, ValidationError, MD5Type
 from schematics.types.compound import ListType, ModelType
 from zope.interface import implementer
 
@@ -22,6 +22,7 @@ class Asset(BaseAsset):
     items = ListType(ModelType(Item))
     debt = ModelType(Debt)
     additionalClassifications = ListType(ModelType(AssetAdditionalClassification), default=list())
+    relatedLot = MD5Type(serialize_when_none=False)
 
     def validate_relatedLot(self, data, lot):
         if data['status'] == 'active' and not lot:
